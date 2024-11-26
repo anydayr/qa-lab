@@ -1,0 +1,375 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.table-container {
+  background-color: #111111;
+}
+.results {
+  color: #3fefef;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #222222;
+  border-radius: 16px;
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.dropzone {
+  height: 100px;
+  border: solid 1px white dashed;
+}
+
+.dropzone {
+  border: 2px dashed #1391cc;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  height: 250px;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+  cursor: pointer; /* Cambia el cursor al pasar sobre la zona */
+  overflow: hidden;
+}
+
+.dropzone:hover {
+  background-color: #141414;
+}
+
+button {
+  background-color: #1391cc;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+pre {
+  background-color: #09312c;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.preview {
+  border-radius: 5px;
+  overflow: hidden;
+  object-fit: fill;
+}
+ul {
+  list-style-type: none; /* Eliminar los puntos de lista */
+  padding: 0;
+}
+
+li {
+  margin: 5px 0; /* Espaciado entre elementos de la lista */
+}
+
+.images-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1.5rem;
+  max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+  margin-bottom: 20px; /* Espacio entre las imágenes y el botón */
+}
+
+.dropzone {
+  border-radius: 8px;
+  flex: 1; /* Para que ambos dropzones ocupen el mismo espacio */
+  text-align: center;
+}
+
+.preview {
+  max-width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+  height: auto;
+}
+
+table {
+  width: 100%; /* Ancho completo */
+  border-collapse: collapse; /* Colapsar bordes para un diseño más limpio */
+  margin-top: 20px; /* Espacio entre el resultado y la tabla */
+  margin-bottom: 3rem;
+}
+
+th,
+td {
+  padding: 12px; /* Espaciado interno */
+  text-align: left; /* Alinear texto a la izquierda */
+}
+
+* Apply CSS reset to remove default margin and padding,
+and set box-sizing */ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolas;
+  /* Set default font family */
+}
+
+/* Style the body element */
+body {
+  display: flex;
+  /* Use flexbox for layout */
+  justify-content: center;
+  /* Center content horizontally */
+  align-items: center;
+  /* Center content vertically */
+  min-height: 100vh;
+  /* Set minimum height to cover the viewport */
+  background: #111;
+  /* Set background color */
+}
+
+/* Style the container for the scanning animation */
+.scan {
+  position: relative;
+  /* Positioning context for absolute positioned children */
+  display: flex;
+  /* Use flexbox for layout */
+  flex-direction: column;
+  /* Arrange children vertically */
+  align-items: center;
+  /* Center children horizontally */
+}
+
+/* Style the hand image */
+.scan .hand {
+  position: relative;
+  /* Positioning context for pseudo-elements */
+  width: 800px;
+  /* Set width of the hand image */
+  height: 500px;
+  /* Set height of the hand image */
+  background: url(hand_02.png);
+  /* Set background image */
+  background-size: 500px;
+  /* Set background size to match container */
+}
+
+/* Style the scanning animation for the hand image */
+.scan .hand::before {
+  content: '';
+  /* Create a pseudo-element */
+  position: absolute;
+  /* Position it absolutely within .hand */
+  top: 0;
+  /* Align it to the top of .hand */
+  left: 0;
+  /* Align it to the left of .hand */
+  width: 100%;
+  /* Make it take the full width of .hand */
+  height: 100%;
+  /* Make it take the full height of .hand */
+  background: url(hand_01.png);
+  /* Set background image */
+  background-size: 500px;
+  /* Set background size to match container */
+  animation: animate 4s ease-in-out infinite;
+  /* Apply animation */
+}
+
+/* Define keyframes for the scanning animation */
+@keyframes animate {
+  0%,
+  100% {
+    height: 0%;
+    /* Set height to 0% at start and end */
+  }
+
+  50% {
+    height: 100%;
+    /* Set height to 100% at 50% mark */
+  }
+}
+
+/* Style the scanning lines */
+.scan .hand::after {
+  content: '';
+  /* Create a pseudo-element */
+  position: absolute;
+  /* Position it absolutely within .hand */
+  top: 0;
+  /* Align it to the top of .hand */
+  left: 0;
+  /* Align it to the left of .hand */
+  width: 100%;
+  /* Make it take the full width of .hand */
+  height: 8px;
+  /* Set height of the scanning lines */
+  background: #3fefef;
+  /* Set background color of the lines */
+  border-radius: 8px;
+  /* Apply border radius to create rounded ends */
+  filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
+  /* Apply drop shadow effect */
+  animation: animateLines 4s ease-in-out infinite;
+  /* Apply animation */
+}
+
+/* Define keyframes for the scanning lines animation */
+@keyframes animateLines {
+  0%,
+  100% {
+    top: 0%;
+    /* Set top position to 0% at start and end */
+  }
+
+  50% {
+    top: 100%;
+    /* Set top position to 100% at 50% mark */
+  }
+}
+
+/* Style the heading */
+.scan h3 {
+  text-transform: uppercase;
+  /* Transform text to uppercase */
+  font-size: 2em;
+  /* Set font size */
+  letter-spacing: 2px;
+  /* Set letter spacing */
+  margin-top: 20px;
+  /* Set top margin */
+  color: #3fefef;
+  /* Set text color */
+  filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
+  /* Apply drop shadow effect */
+  animation: animateText 0.5s steps(1) infinite;
+  /* Apply animation */
+}
+
+/* Define keyframes for the text animation */
+@keyframes animateText {
+  0%,
+  100% {
+    opacity: 0;
+    /* Set opacity to 0 at start and end */
+  }
+
+  50% {
+    opacity: 1;
+    /* Set opacity to 1 at 50% mark */
+  }
+}
+
+.lines {
+  display: flex;
+  justify-content: center;
+}
+/* Style the lines representing scanning progress */
+.scan .hand .lines {
+  position: absolute;
+  /* Position it absolutely within .hand */
+  inset: 0;
+  /* Make it fill the entire .hand container */
+}
+
+/* Style the lines image */
+.scan .hand .lines::before {
+  content: '';
+  /* Create a pseudo-element */
+  position: absolute;
+  /* Position it absolutely within .lines */
+  top: 0;
+  /* Align it to the top of .lines */
+  left: 0;
+  /* Align it to the left of .lines */
+  width: 500px;
+  /* Set width of the lines image */
+  height: 500px;
+  /* Set height of the lines image */
+  background: url(lines.png);
+  /* Set background image */
+  background-size: 500px;
+  /* Set background size to match container */
+  animation: handLines 4s ease-in-out infinite;
+  /* Apply animation */
+}
+
+/* Define keyframes for the lines animation */
+@keyframes handLines {
+  0%,
+  25%,
+  100% {
+    height: 0;
+    /* Set height to 0 at start, 25%, and end */
+  }
+
+  50% {
+    height: 100%;
+    /* Set height to 100% at 50% mark */
+  }
+}
+
+/* Style the points image */
+.scan .hand .lines::after {
+  content: '';
+  /* Create a pseudo-element */
+  position: absolute;
+  /* Position it absolutely within .lines */
+  top: 0;
+  /* Align it to the top of .lines */
+  left: 0;
+  /* Align it to the left of .lines */
+  width: 500px;
+  /* Set width of the points image */
+  height: 500px;
+  /* Set height of the points image */
+  background: url(points.png);
+  /* Set background image */
+  background-size: 500px;
+  /* Set background size to match container */
+  animation: handPoints 4s ease-in-out infinite;
+  /* Apply animation */
+}
+
+/* Define keyframes for the points animation */
+@keyframes handPoints {
+  0%,
+  100% {
+    height: 0;
+    /* Set height to 0 at start and end */
+  }
+
+  50% {
+    height: 100%;
+    /* Set height to 100% at 50% mark */
+  }
+}
